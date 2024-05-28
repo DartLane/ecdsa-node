@@ -16,7 +16,7 @@ function Transfer({ address, setBalance }) {
       } = await server.post(`send`, {
         sender: address,
         amount: parseInt(sendAmount),
-        recipient,
+        recipient: recipient.slice(2),
       });
       setBalance(balance);
     } catch (ex) {
